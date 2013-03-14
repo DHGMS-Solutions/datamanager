@@ -1,0 +1,718 @@
+﻿//////////////////////////////////////////////////////////////////////////
+// Licensed under GNU General Public License version 2 (GPLv2)
+//
+// DHGMS Data Manager by DHGMS Solutions
+// http://datamanager.codeplex.com
+//////////////////////////////////////////////////////////////////////////
+namespace Dhgms.DataManager.Model.Info.SearchFilter.Comparison
+{
+	/// <summary>
+	/// Base Search Comparison Class
+	/// </summary>
+	public abstract class Base
+	{
+		#region fields
+		public System.String Name;
+		#endregion
+
+		#region our methods
+		protected Base(
+			System.String name
+			)
+		{
+			Name = name;
+		}
+
+		public abstract System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			);
+		#endregion
+	}
+
+	/// <summary>
+	/// Base Single Value Search Comparison Class
+	/// </summary>
+	public abstract class SingleValue<TDataType>
+		: Base
+	{
+		#region fields
+		public TDataType Value;
+		#endregion
+
+		#region our methods
+		protected SingleValue(
+			System.String name,
+			TDataType value
+			) : base(name)
+		{
+			Value = value;
+		}
+		#endregion
+	}
+
+	/// <summary>
+	/// Base DualValue Search Comparison Class
+	/// </summary>
+	public abstract class DualValue<TDataType>
+		: Base
+	{
+		#region fields
+		public TDataType A;
+		public TDataType B;
+		#endregion
+
+		#region our methods
+		protected DualValue(
+			System.String name,
+			TDataType a,
+			TDataType b
+			) : base(name)
+		{
+			A = a;
+			B = b;
+		}
+
+		#endregion
+	}
+
+	/// <summary>
+	/// Search Comparison Class for IsNull
+	/// </summary>
+	public sealed class IsNull
+		:Base
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public IsNull(
+			System.String name
+			) : base(name)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for IsNullOrEmpty
+	/// </summary>
+	public sealed class IsNullOrEmpty
+		:Base
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public IsNullOrEmpty(
+			System.String name
+			) : base(name)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for IsNumeric
+	/// </summary>
+	public sealed class IsNumeric
+		:Base
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public IsNumeric(
+			System.String name
+			) : base(name)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for NotNull
+	/// </summary>
+	public sealed class NotNull
+		:Base
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public NotNull(
+			System.String name
+			) : base(name)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for NotNullOrEmpty
+	/// </summary>
+	public sealed class NotNullOrEmpty
+		:Base
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public NotNullOrEmpty(
+			System.String name
+			) : base(name)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for NotNumeric
+	/// </summary>
+	public sealed class NotNumeric
+		:Base
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public NotNumeric(
+			System.String name
+			) : base(name)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+
+	/// <summary>
+	/// Search Comparison Class for GreaterThan
+	/// </summary>
+	public sealed class GreaterThan<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public GreaterThan(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for GreaterThanOrEqualTo
+	/// </summary>
+	public sealed class GreaterThanOrEqualTo<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public GreaterThanOrEqualTo(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for EqualTo
+	/// </summary>
+	public sealed class EqualTo<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public EqualTo(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for LessThan
+	/// </summary>
+	public sealed class LessThan<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public LessThan(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for LessThanOrEqualTo
+	/// </summary>
+	public sealed class LessThanOrEqualTo<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public LessThanOrEqualTo(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for NotEqualTo
+	/// </summary>
+	public sealed class NotEqualTo<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public NotEqualTo(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+
+	/// <summary>
+	/// Search Comparison Class for Like
+	/// </summary>
+	public sealed class Like<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public Like(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+
+	/// <summary>
+	/// Search Comparison Class for Between
+	/// </summary>
+	public sealed class Between<TDataType>
+		:DualValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public Between(
+			System.String name,
+			TDataType a,
+			TDataType b
+			) : base(name, a, b)
+		{
+		}
+
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for Inside
+	/// </summary>
+	public sealed class Inside<TDataType>
+		:DualValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public Inside(
+			System.String name,
+			TDataType a,
+			TDataType b
+			) : base(name, a, b)
+		{
+		}
+
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for Outside
+	/// </summary>
+	public sealed class Outside<TDataType>
+		:DualValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public Outside(
+			System.String name,
+			TDataType a,
+			TDataType b
+			) : base(name, a, b)
+		{
+		}
+
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+
+	namespace TokenCount
+	{
+	/// <summary>
+	/// Search Comparison Class for GreaterThan
+	/// </summary>
+	public sealed class GreaterThan<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public GreaterThan(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for GreaterThanOrEqualTo
+	/// </summary>
+	public sealed class GreaterThanOrEqualTo<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public GreaterThanOrEqualTo(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for EqualTo
+	/// </summary>
+	public sealed class EqualTo<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public EqualTo(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for LessThan
+	/// </summary>
+	public sealed class LessThan<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public LessThan(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for LessThanOrEqualTo
+	/// </summary>
+	public sealed class LessThanOrEqualTo<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public LessThanOrEqualTo(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for NotEqualTo
+	/// </summary>
+	public sealed class NotEqualTo<TDataType>
+		:SingleValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public NotEqualTo(
+			System.String name,
+			TDataType value
+			) : base(name, value)
+		{
+		}
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+
+	/// <summary>
+	/// Search Comparison Class for Between
+	/// </summary>
+	public sealed class Between<TDataType>
+		:DualValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public Between(
+			System.String name,
+			TDataType a,
+			TDataType b
+			) : base(name, a, b)
+		{
+		}
+
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for Inside
+	/// </summary>
+	public sealed class Inside<TDataType>
+		:DualValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public Inside(
+			System.String name,
+			TDataType a,
+			TDataType b
+			) : base(name, a, b)
+		{
+		}
+
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+	/// <summary>
+	/// Search Comparison Class for Outside
+	/// </summary>
+	public sealed class Outside<TDataType>
+		:DualValue<TDataType>
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public Outside(
+			System.String name,
+			TDataType a,
+			TDataType b
+			) : base(name, a, b)
+		{
+		}
+
+
+		public override System.String GetConstraint(
+			Dhgms.DataManager.Model.CodeGenerator.Sql.Base sqlGenerator
+			)
+		{
+			return sqlGenerator.GetConstraint(this);
+		}
+
+	}
+
+
+	}
+}

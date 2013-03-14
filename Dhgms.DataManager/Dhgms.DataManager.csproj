@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A1306E6-6537-4F77-B1E2-C3A1D9C22B8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dhgms.DataManager</RootNamespace>
+    <AssemblyName>Dhgms.DataManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Dhgms.DataManager.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Dhgms.DataManager.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>dhgms.datamanager.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\CommandLine\Base.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Model\Collections\Generic\Tree.cs" />
+    <Compile Include="Model\Collections\Generic\TreeNode.cs" />
+    <Compile Include="Model\ConfigurationElementCollection\Base.cs" />
+    <Compile Include="Model\ConfigurationElementCollection\EmailRecipientCollection.cs" />
+    <Compile Include="Model\ConfigurationElementCollection\Interface\IRunSetCollection.cs" />
+    <Compile Include="Model\ConfigurationElementCollection\RunSetCollection.cs" />
+    <Compile Include="Model\ConfigurationElement\EmailRecipient.cs" />
+    <Compile Include="Model\ConfigurationElement\InternetServer.cs" />
+    <Compile Include="Model\ConfigurationElement\RunSet.cs" />
+    <Compile Include="Model\Exception\Database\EmptyResultSetException.cs" />
+    <Compile Include="Model\Exception\Directory\StringInBadFormatException.cs" />
+    <Compile Include="Model\Exception\Email\NoRecipientsException.cs" />
+    <Compile Include="Model\Exception\EnumerationValueNotSupportedException..cs" />
+    <Compile Include="Model\Exception\FailedToGetResourceStreamException.cs" />
+    <None Include="App.config" />
+    <None Include="Dhgms.DataManager.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dhgms.datamanager.snk" />
+    <None Include="Model\Exception\NumberTooHighException.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumberTooHighException.cs</LastGenOutput>
+    </None>
+    <Compile Include="Model\Exception\NullRunSetNameException.cs" />
+    <Compile Include="Model\Exception\NumberTooHighException.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NumberTooHighException.tt</DependentUpon>
+    </Compile>
+    <None Include="Model\Exception\NumberTooLowException.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumberTooLowException.cs</LastGenOutput>
+    </None>
+    <Compile Include="Model\Exception\NumberTooLowException.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NumberTooLowException.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Exception\PossibleSqlInjectionException.cs" />
+    <Compile Include="Model\Exception\PostCodeBadFormatException.cs" />
+    <Compile Include="Model\Exception\RunSetNotFoundException.cs" />
+    <Compile Include="Model\Exception\StringTooLongException.cs" />
+    <Compile Include="Model\Exception\StringTooShortException.cs" />
+    <Compile Include="Model\Exception\UnexpectedFileFormat.cs" />
+    <Compile Include="Model\Helper\AdoNet\Base.cs" />
+    <Compile Include="Model\Helper\Application.cs" />
+    <Compile Include="Model\Helper\Boolean.cs" />
+    <Compile Include="Model\Helper\Byte.cs" />
+    <Compile Include="Model\Helper\Configuration.cs" />
+    <Compile Include="Model\Helper\Database\Base.cs" />
+    <Compile Include="Model\Helper\File.cs" />
+    <Compile Include="Model\Helper\Number.cs" />
+    <Compile Include="Model\Helper\Permutation.cs" />
+    <Compile Include="Model\Helper\Cryptography.cs" />
+    <Compile Include="Model\Helper\Database\MsSql10.cs" />
+    <Compile Include="Model\Helper\Date.cs" />
+    <Compile Include="Model\Helper\Email.cs" />
+    <Compile Include="Model\Helper\Postcode\PostArea.cs" />
+    <Compile Include="Model\Helper\Reflection.cs" />
+    <Compile Include="Model\Helper\Text.cs" />
+    <Compile Include="Model\Info\Base.cs" />
+    <Compile Include="Model\Info\CommandLineSettings\Base.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Base.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Info\CommandLineSettings\Interface\IRunSet.cs" />
+    <Compile Include="Model\Info\Difference.cs" />
+    <Compile Include="Model\Info\Raw\GBPostcode\Full.cs" />
+    <Compile Include="Model\Info\Raw\GBPostcode\Inward.cs" />
+    <Compile Include="Model\Info\Raw\GBPostcode\Outward.cs" />
+    <Compile Include="Model\Info\Raw\GBPostcode\PostArea.cs" />
+    <Compile Include="Model\Info\Raw\GBPostcode\PostAreaMapping.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostAreaMapping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Info\TriState.cs" />
+    <Compile Include="Model\Info\ViewFilter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Model\Info\Raw\GBPostcode\PostAreaMapping.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PostAreaMapping.cs</LastGenOutput>
+    </None>
+    <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Model\Info\CommandLineSettings\Base.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Base.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not $(ConfigurationName) == Debug nuget pack $(ProjectPath) -Prop Configuration=Release -Symbols</PostBuildEvent>
+    <TransformOnBuild>true</TransformOnBuild>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>del *.nupkg</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
