@@ -1,0 +1,103 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+<#
+System.Collections.Generic.KeyValuePair<System.String, System.String>[] classes =
+{
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("ClrChar","System.Char"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("ClrDateTime","System.DateTime"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("ClrDecimal","System.Decimal"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("ClrDouble","System.Double"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("ClrSingle","System.Single"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("Integer16","System.Int16"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("Integer32","System.Int32"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("Integer64","System.Int64"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("UnsignedInteger8","System.Byte")
+	// types below not CLS compliant - left out for now
+	/*
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("UnsignedInteger16","System.UInt16"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("UnsignedInteger32","System.UInt32"),
+	new System.Collections.Generic.KeyValuePair<System.String, System.String>("UnsignedInteger64","System.UInt64")
+	*/
+};
+#>
+//////////////////////////////////////////////////////////////////////////
+// Licensed under GNU General Public License version 2 (GPLv2)
+//
+// DHGMS Data Manager by DHGMS Solutions
+// http://datamanager.codeplex.com
+//////////////////////////////////////////////////////////////////////////
+
+namespace Dhgms.DataManager.Model.Exception
+{
+<#
+foreach(System.Collections.Generic.KeyValuePair<System.String, System.String> item in classes)
+{
+#>
+	/// <summary>
+	/// The number passed in was higher than the allowed maximum
+	/// </summary>
+	[System.Serializable]
+	public class NumberTooLow<#=item.Key#>Exception
+		: System.Exception
+	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public NumberTooLow<#=item.Key#>Exception()
+		{
+		}
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="message">Exception Message</param>
+		public NumberTooLow<#=item.Key#>Exception(
+			System.String message
+			)
+			: base(message)
+		{
+		}
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="message">Exception Message</param>
+		/// <param name="innerException">Inner Exception</param>
+		public NumberTooLow<#=item.Key#>Exception(
+			System.String message,
+			System.Exception innerException
+			) : base(message, innerException)
+		{
+		}
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="info">Serialization Info</param>
+		/// <param name="context">Context</param>
+		protected NumberTooLow<#=item.Key#>Exception(
+			System.Runtime.Serialization.SerializationInfo info,
+			System.Runtime.Serialization.StreamingContext context
+			)
+			: base(info, context)
+		{
+		}
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		public NumberTooLow<#=item.Key#>Exception(
+			string parameterName,
+			<#=item.Value#> expected,
+			<#=item.Value#> actual
+			)
+			: base(parameterName + ": The number specified is too low. Minimum: " + expected + ", Actual: " + actual)
+		{
+
+		}
+	}
+
+<#
+}
+#>
+}
