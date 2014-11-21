@@ -16,6 +16,8 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,10 +43,6 @@
     <AssemblyOriginatorKeyFile>dhgms.datamanger.csv.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dhgms.DataManager, Version=0.1301.1.0, Culture=neutral, PublicKeyToken=1443dbd5e47de3af, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Dhgms.DataManager.0.1301.1.0\lib\net40\Dhgms.DataManager.dll</HintPath>
-    </Reference>
     <Reference Include="Kent.Boogaart.HelperTrinity">
       <HintPath>packages\Kent.Boogaart.HelperTrinity.1.4.0.0\lib\net40\Kent.Boogaart.HelperTrinity.dll</HintPath>
     </Reference>
@@ -79,6 +77,7 @@
   <PropertyGroup>
     <PreBuildEvent>del *.nupkg</PreBuildEvent>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -86,4 +85,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\CommonBuild.targets" />
 </Project>

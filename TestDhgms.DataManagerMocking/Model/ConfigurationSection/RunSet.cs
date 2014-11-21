@@ -12,7 +12,7 @@ namespace TestDhgms.DataManagerMocking.Model.ConfigurationSection
     /// Mocked config section for run sets
     /// </summary>
     public class RunSet
-        : System.Configuration.ConfigurationSection, Dhgms.DataManager.Model.ConfigurationElementCollection.Interface.IRunSetCollection<Model.ConfigurationElement.RunSet>
+        : System.Configuration.ConfigurationSection, IRunSetCollection<Model.ConfigurationElement.RunSet>
     {
         /// <summary>
         /// Collection of RunSets

@@ -1,27 +1,28 @@
 ﻿<?xml version="1.0"?>
-<package >
+<package>
 	<metadata>
 		<id>$id$</id>
 		<version>$version$</version>
 		<title>DHGMS Data Manager</title>
-		<authors>DHGMS Solutions</authors>
-		<owners>DHGMS Solutions</owners>
+		<authors>dhgmssolutions,dpvreony</authors>
+		<owners>dhgmssolutions,dpvreony</owners>
 		<projectUrl>http://datamanager.codeplex.com</projectUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<licenseUrl>http://datamanager.codeplex.com/license</licenseUrl>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		<description>
 			A base library for performing Data orientated tasks. Designed to be used in conjunction with code generated using the DHGMS Nucleotide library.
 		</description>
-		<copyright>Copyright 2004-2012 DHGMS Solutions</copyright>
+		<copyright>Copyright 2004-2014 DHGMS Solutions</copyright>
 		<tags>T4 DHGMS Data</tags>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" />
-      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" />
-      <frameworkAssembly assemblyName="System.Configuration" />
-      <frameworkAssembly assemblyName="System.Core" />
-      <frameworkAssembly assemblyName="System.Data" />
-      <frameworkAssembly assemblyName="System.Runtime.Serialization" />
-      <frameworkAssembly assemblyName="System.Xml" />
-      <frameworkAssembly assemblyName="System.Xml.Linq" />
-    </frameworkAssemblies>
-  </metadata>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" />
+			<frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" />
+			<frameworkAssembly assemblyName="System.Configuration" />
+			<frameworkAssembly assemblyName="System.Core" />
+			<frameworkAssembly assemblyName="System.Data" />
+			<frameworkAssembly assemblyName="System.Runtime.Serialization" />
+			<frameworkAssembly assemblyName="System.Xml" />
+			<frameworkAssembly assemblyName="System.Xml.Linq" />
+		</frameworkAssemblies>
+	</metadata>
 </package>

@@ -4,14 +4,15 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>DHGMS Data Manager CSV</title>
-    <authors>DHGMS Solutions</authors>
-    <owners>DHGMS Solutions</owners>
+    <authors>dhgmssolutions,dpvreony</authors>
+    <owners>dhgmssolutions,dpvreony</owners>
     <projectUrl>http://datamanager.codeplex.com</projectUrl>
+    <licenseUrl>http://datamanager.codeplex.com/license</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       CSV Helpers for DHGMS DataManager. This is an extension to the Data Manager library, which contains code which has a dependancy on other 3rd party libraries.
     </description>
-    <copyright>Copyright 2004-2012 DHGMS Solutions</copyright>
+    <copyright>Copyright 2004-2014 DHGMS Solutions</copyright>
     <tags>T4 DHGMS Data</tags>
   </metadata>
 </package>

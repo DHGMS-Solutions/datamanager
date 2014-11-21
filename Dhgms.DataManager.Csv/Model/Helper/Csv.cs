@@ -36,7 +36,7 @@ namespace Dhgms.DataManager.Model.Helper
         /// <param name="value">The tri-state value</param>
         public static void AddTriStateColumn(
             Kent.Boogaart.KBCsv.RecordBase newItem,
-            Info.TriState value)
+            bool? value)
         {
             if (newItem == null)
             {
@@ -44,19 +44,14 @@ namespace Dhgms.DataManager.Model.Helper
             }
 
             string equiv;
-            switch (value)
+
+            if (!value.HasValue)
             {
-                case Info.TriState.Unknown:
-                    equiv = "U";
-                    break;
-                case Info.TriState.No:
-                    equiv = "N";
-                    break;
-                case Info.TriState.Yes:
-                    equiv = "Y";
-                    break;
-                default:
-                    throw new System.ArgumentOutOfRangeException("value");
+                equiv = "U";
+            }
+            else
+            {
+                equiv = value.Value ? "Y" : "N";
             }
 
             newItem.Values.Add(equiv);

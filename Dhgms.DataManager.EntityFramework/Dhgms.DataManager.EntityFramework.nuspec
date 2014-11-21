@@ -4,14 +4,15 @@
 		<id>$id$</id>
 		<version>$version$</version>
 		<title>DHGMS Data Manager Entity Framework</title>
-		<authors>DHGMS Solutions</authors>
-		<owners>DHGMS Solutions</owners>
-		<projectUrl>http://datamanager.codeplex.com</projectUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>
+    <authors>dhgmssolutions,dpvreony</authors>
+    <owners>dhgmssolutions,dpvreony</owners>
+    <projectUrl>http://datamanager.codeplex.com</projectUrl>
+    <licenseUrl>http://datamanager.codeplex.com/license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
 			Entity Framework base library for performing Data orientated tasks. Designed to be used in conjunction with code generated using the DHGMS Nucleotide library.
 		</description>
-		<copyright>Copyright 2004-2012 DHGMS Solutions</copyright>
+		<copyright>Copyright 2004-2014 DHGMS Solutions</copyright>
 		<tags>T4 DHGMS Data Entity</tags>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" />

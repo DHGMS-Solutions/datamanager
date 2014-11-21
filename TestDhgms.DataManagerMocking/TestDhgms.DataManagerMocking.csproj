@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ApplicationSettingTest.cs" />
     <Compile Include="Model\ConfigurationElement\RunSet.cs" />
     <Compile Include="Model\ConfigurationSection\RunSet.cs" />
     <Compile Include="Model\Info\CommandLineSettings.cs" />
