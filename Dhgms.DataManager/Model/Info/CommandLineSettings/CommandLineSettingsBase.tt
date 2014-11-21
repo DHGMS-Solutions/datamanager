@@ -1,0 +1,11 @@
+﻿<#@ template language="C#" hostspecific="false"#>
+<#@ output extension=".cs" #>
+<#@ assembly name="$(nucleotideToolsFolder)\Dhgms.Nucleotide.dll" #>
+<#@ assembly name="$(nucleotideToolsFolder)\Dhgms.DataManager.CodeGeneration.dll" #>
+<#
+
+    var cgp = new Dhgms.DataManager.CodeGeneration.Model.CommandLineSettings();
+
+    var information = new Dhgms.Nucleotide.Model.Helper.Information();
+#>
+<#=information.Generate(cgp)#>

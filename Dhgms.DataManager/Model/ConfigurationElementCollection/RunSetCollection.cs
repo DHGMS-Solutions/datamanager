@@ -1,6 +1,18 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="RunSetCollection.cs" company="DHGMS Solutions">
-//   2004-2012 DHGMS Solutions. Some Rights Reserved. Licensed under GNU General Public License version 2 (GPLv2)
+//   Copyright 2004-2014 DHGMS Solutions.
+//      
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+//      
+//   http://www.apache.org/licenses/LICENSE-2.0
+//      
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 // </copyright>
 // <summary>
 //   Represents a collection of runsets in the app config
@@ -16,13 +28,15 @@ namespace Dhgms.DataManager.Model.ConfigurationElementCollection
     using Dhgms.DataManager.Model.ConfigurationElement;
 
     /// <summary>
-    /// Represents a collection of runsets in the app config
-    /// based upon http://blog.newslacker.net/2008/02/net-20-custom-configuration-sections.html
+    /// Represents a collection of run sets in the app config
     /// </summary>
+    /// <remarks>
+    /// based upon http://blog.newslacker.net/2008/02/net-20-custom-configuration-sections.html
+    /// </remarks>
     /// <typeparam name="TRunSetElementClass">
     /// </typeparam>
     [SuppressMessage("Microsoft.Design", "CA1010:CollectionsShouldImplementGenericInterface")]
-    public class RunSetCollection<TRunSetElementClass> : BaseCollection<TRunSetElementClass>
+    public class RunSetCollection<TRunSetElementClass> : BaseConfigurationElementCollection<TRunSetElementClass>
         where TRunSetElementClass : RunSet<TRunSetElementClass>, new()
     {
         #region Methods

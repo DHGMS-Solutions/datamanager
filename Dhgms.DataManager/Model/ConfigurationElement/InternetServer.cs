@@ -1,6 +1,18 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="DHGMS Solutions" file="InternetServer.cs">
-//   2004-2012 DHGMS Solutions. Some Rights Reserved. Licensed under GNU General Public License version 2 (GPLv2)
+//   Copyright 2004-2014 DHGMS Solutions.
+//      
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+//      
+//   http://www.apache.org/licenses/LICENSE-2.0
+//      
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 // </copyright>
 // <summary>
 //   Configuration Element Representing the connection to a server
@@ -20,14 +32,14 @@ namespace Dhgms.DataManager.Model.ConfigurationElement
         #region Public Properties
 
         /// <summary>
-        /// Hostname of the server
+        /// Gets or sets the hostname of the server
         /// </summary>
         [ConfigurationProperty("hostName", IsRequired = true)]
         public string HostName
         {
             get
             {
-                return (String)this["hostName"];
+                return (string)this["hostName"];
             }
 
             set
@@ -37,14 +49,14 @@ namespace Dhgms.DataManager.Model.ConfigurationElement
         }
 
         /// <summary>
-        /// Password for the connection, if needed
+        /// Gets or sets the password for the connection, if needed
         /// </summary>
         [ConfigurationProperty("password", IsRequired = false)]
         public string Password
         {
             get
             {
-                return (String)this["password"];
+                return (string)this["password"];
             }
 
             set
@@ -54,14 +66,14 @@ namespace Dhgms.DataManager.Model.ConfigurationElement
         }
 
         /// <summary>
-        /// port of the server, if not using the protocol default
+        /// Gets or sets the port of the server, if not using the protocol default
         /// </summary>
         [ConfigurationProperty("port", IsRequired = false)]
         public int Port
         {
             get
             {
-                return (Int32)this["port"];
+                return (int)this["port"];
             }
 
             set
@@ -71,14 +83,14 @@ namespace Dhgms.DataManager.Model.ConfigurationElement
         }
 
         /// <summary>
-        /// The path of the request
+        /// Gets or sets the path of the request
         /// </summary>
         [ConfigurationProperty("requestPath", IsRequired = true)]
         public string RequestPath
         {
             get
             {
-                return (String)this["requestPath"];
+                return (string)this["requestPath"];
             }
 
             set
@@ -88,14 +100,14 @@ namespace Dhgms.DataManager.Model.ConfigurationElement
         }
 
         /// <summary>
-        /// Username for the connection, if needed
+        /// Gets or sets the username for the connection, if needed
         /// </summary>
         [ConfigurationProperty("userName", IsRequired = false)]
         public string UserName
         {
             get
             {
-                return (String)this["userName"];
+                return (string)this["userName"];
             }
 
             set
@@ -109,7 +121,7 @@ namespace Dhgms.DataManager.Model.ConfigurationElement
         #region Public Methods and Operators
 
         /// <summary>
-        /// Dictates whether the config is read only
+        /// Gets or sets a value indicating whether the config is read only
         /// </summary>
         /// <returns>
         /// true or false

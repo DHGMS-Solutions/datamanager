@@ -55,6 +55,12 @@
     <Content Include="Resource\Sql\Text\IsNullOrWhitespace.sql" />
     <Content Include="Resource\Sql\Text\Trim.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dhgms.DataManager\Dhgms.DataManager.csproj">
+      <Project>{2a1306e6-6537-4f77-b1e2-c3a1d9c22b8a}</Project>
+      <Name>Dhgms.DataManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -63,4 +69,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\CommonBuild.targets" />
 </Project>

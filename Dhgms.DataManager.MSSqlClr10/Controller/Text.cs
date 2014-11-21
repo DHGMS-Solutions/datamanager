@@ -5,315 +5,262 @@ using System.Text;
 
 namespace Dhgms.DataManager.MSSqlClr10.Controller
 {
-	public static class Text
-	{
-		/// <summary>
-		/// Gets the count of a specifed character
-		/// </summary>
-		/// <param name="input"></param>
-		/// <param name="charToCount"></param>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlInt64 GetCharCount(
-			System.Data.SqlTypes.SqlString input,
-			System.Data.SqlTypes.SqlString charToCount
-			)
-		{
-			//check input var
-			if (input == null
-				|| input.Value == null)
-			{
-				return System.Data.SqlTypes.SqlInt64.Null;
-			}
+    using Dhgms.DataManager.Model.Helper;
 
-			//check charToCount var
-			if (charToCount == null
-				|| charToCount.Value == null)
-			{
-				return System.Data.SqlTypes.SqlInt64.Null;
-			}
+    public static class Text
+    {
+        /// <summary>
+        /// Gets the count of a specifed character
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="charToCount"></param>
+        /// <returns></returns>
+        [Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        public static System.Data.SqlTypes.SqlInt64 GetCharCount(System.Data.SqlTypes.SqlString input, System.Data.SqlTypes.SqlString charToCount)
+        {
+            if (input.IsNull)
+            {
+                return System.Data.SqlTypes.SqlInt64.Null;
+            }
 
-			if (input.Value.Length == 0)
-			{
-				return 0;
-			}
+            //check charToCount var
+            if (charToCount == null
+                || charToCount.Value == null)
+            {
+                return System.Data.SqlTypes.SqlInt64.Null;
+            }
 
-			if (charToCount.Value.Length != 1)
-			{
-				throw new ArgumentException(
-					"charToCount should be 1 character long",
-					"input"
-					);
-			}
+            if (input.Value.Length == 0)
+            {
+                return 0;
+            }
 
-			String adjustedInput = input.Value;
-			String[] split = adjustedInput.Split(charToCount.Value[0]);
+            if (charToCount.Value.Length != 1)
+            {
+                throw new ArgumentException(
+                    "charToCount should be 1 character long",
+                    "input"
+                    );
+            }
 
-			return split.Length - 1;
+            String adjustedInput = input.Value;
+            String[] split = adjustedInput.Split(charToCount.Value[0]);
 
-		}
+            return split.Length - 1;
 
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlBoolean IsNullOrEmpty(
-			System.Data.SqlTypes.SqlString input
-			)
-		{
+        }
 
-			if (
-				input == null
-				|| input.IsNull
-				|| input.Value == null
-				|| input.Value.Length == 0
-				)
-			{
-				return true;
-			}
+        /// <summary>
+        /// States whether a string contains a numeric token
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        public static System.Data.SqlTypes.SqlBoolean GetContainsNumericToken(System.Data.SqlTypes.SqlString input)
+        {
+            if (input.IsNull || string.IsNullOrWhiteSpace(input.Value))
+            {
+                return System.Data.SqlTypes.SqlBoolean.Null;
+            }
 
-			return false;
-		}
+            string[] split = input.Value.Split();
 
-		/// <summary>
-		/// States whether a string contains a numeric token
-		/// </summary>
-		/// <param name="input"></param>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlBoolean GetContainsNumericToken(
-			System.Data.SqlTypes.SqlString input
-			)
-		{
-			//check input var
-			if (input == null)
-			{
-				throw new ArgumentNullException("input");
-			}
+            foreach (string item in split)
+            {
+                if (item.Length > 0
+                    && item.IsInteger())
+                {
+                    return System.Data.SqlTypes.SqlBoolean.True;
+                }
+            }
 
-			if (
-				input.IsNull
-				|| input.Value == null
-				|| input.Value.Length == 0
-				)
-			{
-				throw new ArgumentException("input");
-			}
+            return System.Data.SqlTypes.SqlBoolean.False;
+        }
 
-			string[] split = input.Value.Split();
+        /*
+        [Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        public static Dhgms.DataManager.Model.Info.Metaphone.DoubleMetaphone GetDoubleMetaphone(
+            System.Data.SqlTypes.SqlString input
+            )
+        {
+            Dhgms.DataManager.Model.DoubleMetaphone metaphone = new Dhgms.DataManager.Model.DoubleMetaphone(
+                input.Value
+                );
 
-			foreach (string item in split)
-			{
-				if (item.Length > 0
-					&& item.IsInteger())
-				{
-					return System.Data.SqlTypes.SqlBoolean.True;
-				}
-			}
+            return metaphone;
+        }
+         */
 
-			return System.Data.SqlTypes.SqlBoolean.False;
-		}
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <returns></returns>
+        //[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        //public static System.Data.SqlTypes.SqlString GetDoubleMetaphonePrimary(
+        //    System.Data.SqlTypes.SqlString input
+        //    )
+        //{
+        //    return GetDoubleMetaphone(input).Primary;
+        //}
 
-		/*
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static Dhgms.DataManager.Model.Info.Metaphone.DoubleMetaphone GetDoubleMetaphone(
-			System.Data.SqlTypes.SqlString input
-			)
-		{
-			Dhgms.DataManager.Model.DoubleMetaphone metaphone = new Dhgms.DataManager.Model.DoubleMetaphone(
-				input.Value
-				);
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <returns></returns>
+        //[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        //public static System.Data.SqlTypes.SqlString GetDoubleMetaphoneSecondary(
+        //    System.Data.SqlTypes.SqlString input
+        //    )
+        //{
+        //    return GetDoubleMetaphone(input).Secondary;
+        //}
 
-			return metaphone;
-		}
-		 */
+        /// <summary>
+        /// Gets the specified token of a whitespace split string
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="zeroBasedIndex"></param>
+        /// <returns></returns>
+        [Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        public static System.Data.SqlTypes.SqlString GetToken(
+            System.Data.SqlTypes.SqlString input,
+            System.Data.SqlTypes.SqlInt64 zeroBasedIndex
+            )
+        {
+            //check input var
+            if (input == null)
+            {
+                throw new ArgumentNullException("input");
+            }
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlString GetDoubleMetaphonePrimary(
-			System.Data.SqlTypes.SqlString input
-			)
-		{
-			return GetDoubleMetaphone(input).Primary;
-		}
+            if (
+                input.IsNull
+                || input.Value == null
+                || input.Value.Length == 0
+                )
+            {
+                throw new ArgumentException("input");
+            }
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlString GetDoubleMetaphoneSecondary(
-			System.Data.SqlTypes.SqlString input
-			)
-		{
-			return GetDoubleMetaphone(input).Secondary;
-		}
+            if (zeroBasedIndex.IsNull == true)
+            {
+                throw new ArgumentNullException("zeroBasedIndex");
+            }
 
-		/// <summary>
-		/// Gets the specified token of a whitespace split string
-		/// </summary>
-		/// <param name="input"></param>
-		/// <param name="zeroBasedIndex"></param>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlString GetToken(
-			System.Data.SqlTypes.SqlString input,
-			System.Data.SqlTypes.SqlInt64 zeroBasedIndex
-			)
-		{
-			//check input var
-			if (input == null)
-			{
-				throw new ArgumentNullException("input");
-			}
+            if (zeroBasedIndex.Value < 0)
+            {
+                throw new ArgumentOutOfRangeException("zeroBasedIndex");
+            }
 
-			if (
-				input.IsNull
-				|| input.Value == null
-				|| input.Value.Length == 0
-				)
-			{
-				throw new ArgumentException("input");
-			}
+            string[] split = input.Value.Split();
 
-			if (zeroBasedIndex.IsNull == true)
-			{
-				throw new ArgumentNullException("zeroBasedIndex");
-			}
+            if (split.Length <= zeroBasedIndex)
+            {
+                throw new IndexOutOfRangeException("zeroBasedIndex");
+            }
 
-			if (zeroBasedIndex.Value < 0)
-			{
-				throw new ArgumentOutOfRangeException("zeroBasedIndex");
-			}
+            return split[zeroBasedIndex.Value];
+        }
 
-			string[] split = input.Value.Split();
+        /// <summary>
+        /// Gets the count of a specifed character
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="charToCount"></param>
+        /// <returns></returns>
+        [Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        public static System.Data.SqlTypes.SqlInt64 GetTokenCount(
+            System.Data.SqlTypes.SqlString input
+            )
+        {
+            //check input var
+            if (input == null
+                || input.Value == null)
+            {
+                return System.Data.SqlTypes.SqlInt64.Null;
+            }
 
-			if (split.Length <= zeroBasedIndex)
-			{
-				throw new IndexOutOfRangeException("zeroBasedIndex");
-			}
+            if (input.Value.Length == 0)
+            {
+                return 0;
+            }
 
-			return split[zeroBasedIndex.Value];
-		}
+            String adjustedInput = input.Value;
+            String[] split = adjustedInput.Split(' ');
 
-		/// <summary>
-		/// Gets the count of a specifed character
-		/// </summary>
-		/// <param name="input"></param>
-		/// <param name="charToCount"></param>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlInt64 GetTokenCount(
-			System.Data.SqlTypes.SqlString input
-			)
-		{
-			//check input var
-			if (input == null
-				|| input.Value == null)
-			{
-				return System.Data.SqlTypes.SqlInt64.Null;
-			}
+            return split.Length;
+        }
 
-			if (input.Value.Length == 0)
-			{
-				return 0;
-			}
+        /// <summary>
+        /// Checks to see if there is a space missing between the house number and first word of street name
+        /// i.e. 1MAIN STREET
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        public static System.Data.SqlTypes.SqlString GetHouseNumberAndStreetMissingSpace(System.Data.SqlTypes.SqlString input)
+        {
+            if (input.IsNull || string.IsNullOrWhiteSpace(input.Value))
+            {
+                return null;
+            }
 
-			String adjustedInput = input.Value;
-			String[] split = adjustedInput.Split(' ');
+            return input.Value.GetHouseNumberAndStreetMissingSpace();
+        }
 
-			return split.Length;
-		}
+        /// <summary>
+        /// Removes multiple spaces from a string
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
+        public static System.Data.SqlTypes.SqlString RemoveMultipleSpaces(System.Data.SqlTypes.SqlString input)
+        {
+            if (input.IsNull || string.IsNullOrWhiteSpace(input.Value))
+            {
+                return null;
+            }
 
-		/// <summary>
-		/// Checks to see if there is a space missing between the house number and first word of street name
-		/// i.e. 1MAIN STREET
-		/// </summary>
-		/// <param name="input"></param>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlString GetHouseNumberAndStreetMissingSpace(
-			System.Data.SqlTypes.SqlString input
-			)
-		{
-			//check input var
-			if (
-				input == null
-				)
-			{
-				throw new ArgumentNullException("input");
-			}
+            string[] temp = input.Value.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries);
+            return System.String.Join(" ", temp);
+        }
 
-			if (
-				input.Value == null
-				|| input.Value.Length == 0
-				)
-			{
-				throw new ArgumentException("input");
-			}
+        /// <summary>
+        /// http://sqlblog.com/blogs/adam_machanic/archive/2009/04/26/faster-more-scalable-sqlclr-string-splitting.aspx
+        /// </summary>
+        /// <param name="instr"></param>
+        /// <param name="delimiter"></param>
+        /// <returns></returns>
+        //[Microsoft.SqlServer.Server.SqlFunction(
+        //    FillRowMethodName = "FillIt",
+        //    TableDefinition = "output nvarchar(4000)"
+        //    )]
+        //public static System.Collections.IEnumerator GetTokens(
+        //    System.Data.SqlTypes.SqlChars instr
+        //    )
+        //{
+        //    System.Data.SqlTypes.SqlString delimiter = " ";
+        //    return (
+        //        (instr.IsNull || delimiter.IsNull)
+        //        ? new Dhgms.DataManager.Model.Helper.TextSplitter("", ',')
+        //        : new Dhgms.DataManager.Model.Helper.TextSplitter(instr.ToSqlString().Value, ' ')
+        //        );
+        //}
 
-			return input.Value.GetHouseNumberAndStreetMissingSpace();
-
-		}
-
-		/// <summary>
-		/// Removes multiple spaces from a string
-		/// </summary>
-		/// <param name="input"></param>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(IsDeterministic = true)]
-		public static System.Data.SqlTypes.SqlString RemoveMultipleSpaces(
-			System.Data.SqlTypes.SqlString input
-			)
-		{
-			//check input var
-			if (
-				input == null
-				)
-			{
-				throw new ArgumentNullException("input");
-			}
-
-			string[] temp = input.Value.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries);
-			return System.String.Join(" ", temp);
-		}
-
-		/// <summary>
-		/// http://sqlblog.com/blogs/adam_machanic/archive/2009/04/26/faster-more-scalable-sqlclr-string-splitting.aspx
-		/// </summary>
-		/// <param name="instr"></param>
-		/// <param name="delimiter"></param>
-		/// <returns></returns>
-		[Microsoft.SqlServer.Server.SqlFunction(
-			FillRowMethodName = "FillIt",
-			TableDefinition = "output nvarchar(4000)"
-			)]
-		public static System.Collections.IEnumerator GetTokens(
-			System.Data.SqlTypes.SqlChars instr
-			)
-		{
-			System.Data.SqlTypes.SqlString delimiter = " ";
-			return (
-				(instr.IsNull || delimiter.IsNull)
-				? new Dhgms.DataManager.Model.Helper.TextSplitter("", ',')
-				: new Dhgms.DataManager.Model.Helper.TextSplitter(instr.ToSqlString().Value, ' ')
-				);
-		}
-
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="obj"></param>
-		/// <param name="output"></param>
-		private static void FillIt(
-			object obj,
-			out System.Data.SqlTypes.SqlString output
-			)
-		{
-			output = (
-				new System.Data.SqlTypes.SqlString(
-					(string)obj)
-					);
-		}
-	}
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="obj"></param>
+        ///// <param name="output"></param>
+        //private static void FillIt(
+        //    object obj,
+        //    out System.Data.SqlTypes.SqlString output
+        //    )
+        //{
+        //    output = (
+        //        new System.Data.SqlTypes.SqlString(
+        //            (string)obj)
+        //            );
+        //}
+    }
 }

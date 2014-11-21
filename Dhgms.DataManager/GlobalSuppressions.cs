@@ -1,6 +1,18 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="DHGMS Solutions" file="GlobalSuppressions.cs">
-//   2004-2012 DHGMS Solutions. Some Rights Reserved. Licensed under GNU General Public License version 2 (GPLv2)
+//   Copyright 2004-2014 DHGMS Solutions.
+//      
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+//      
+//   http://www.apache.org/licenses/LICENSE-2.0
+//      
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
 // </copyright>
 // <summary>
 //   GlobalSuppressions.cs
@@ -8,52 +20,3 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Diagnostics.CodeAnalysis;
-
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.ConfigurationElement")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.ConfigurationElementCollection")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.ConfigurationSection")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Exception")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Exception.Email")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Info")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Info.Raw.GBPostcode")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Info.SearchFilter")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Provider")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.ProviderCollection")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.ProviderProxy")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Controller")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Difference")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Exception.Database")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Exception.Directory")]
-[assembly:
-    SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", 
-        Target = "Dhgms.DataManager.Model.Helper.Database")]
