@@ -93,22 +93,6 @@ namespace Dhgms.DataManager.Model.Difference.CommandLineSettings
             set;
         }
 
-            /// <summary>
-            /// Gets a header record for use for something like a CSV file
-            /// </summary>
-            /// <returns>a collection of strings representing the header record</returns>
-            public override System.Collections.Generic.IList<string> HeaderRecord
-            {
-                get
-                {
-                    var result = new System.Collections.Generic.List<string>
-                    {
-                        "WantsHelp"
-                    };
-
-                    return result;
-                }
-            }
 
             /// <summary>
             /// Gets the number of properties that are different
@@ -185,59 +169,6 @@ namespace Dhgms.DataManager.Model.Difference.CommandLineSettings
                 this.WantsHelp.GetHashCode()
                 ^ this.WantsHelp.GetHashCode();
         }
-
-        /// <summary>
-        /// Checks a table to ensure it meets the required schema
-        /// </summary>
-        public override void DoTableValidation()
-        {
-        }
-
-            /// <summary>
-            /// Gets a collection of string data for use for something like a CSV file
-            /// </summary>
-            /// <returns>a collection of strings representing the data record</returns>
-            public override System.Collections.Generic.IList<string> ToStringArray()
-            {
-                var result = new System.Collections.Generic.List<string>
-                {
-                    this.WantsHelp ? "1" : "0"
-                };
-
-                return result;
-            }
-
-            /// <summary>
-            /// Adds an XML Element to an XML Writer
-            /// </summary>
-            /// <param name="writer">
-            /// The XML writer to add the element to.
-            /// </param>
-            /// <param name="parentElementName">
-            /// The name for the parenet element being produced.
-            /// </param>
-            public override void DoXmlElement(
-                    System.Xml.XmlWriter writer,
-                    string parentElementName)
-            {
-            if (writer == null)
-            {
-                throw new ArgumentNullException("writer");
-            }
-
-            if (string.IsNullOrEmpty(parentElementName) || parentElementName.Trim().Length == 0)
-            {
-            throw new ArgumentNullException("parentElementName");
-            }
-
-                writer.WriteStartElement(parentElementName);
-
-                // WantsHelp
-                this.DoChildXmlCDataElement(writer, "WantsHelp", this.WantsHelp ? "1" : "0");
-
-                writer.WriteEndElement();
-            }
-
 
         /// <summary>
         /// Gets the names of the columns that are different

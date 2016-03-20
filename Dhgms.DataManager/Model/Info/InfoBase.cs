@@ -37,16 +37,6 @@ namespace Dhgms.DataManager.Model.Info
     [DataContract]
     public abstract class InfoBase<TInheritingType> : IComparable<TInheritingType>, IEquatable<TInheritingType>, IComparable, IDisposable
     {
-        #region Public Properties
-
-        /// <summary>
-        /// Gets a header record for use for something like a CSV file
-        /// </summary>
-        /// <returns>a collection of strings representing the header record</returns>
-        public abstract IList<string> HeaderRecord { get; }
-
-        #endregion
-
         #region Public Methods and Operators
 
         /// <summary>
@@ -162,16 +152,6 @@ namespace Dhgms.DataManager.Model.Info
         }
 
         /// <summary>
-        /// Checks a table to make sure it meets the required schema
-        /// </summary>
-        public abstract void DoTableValidation();
-
-        /// <summary>
-        /// Adds an XML Element to an XML Writer
-        /// </summary>
-        public abstract void DoXmlElement(System.Xml.XmlWriter writer, string parentElementName);
-
-        /// <summary>
         /// Checks if an object matches this one
         /// </summary>
         /// <param name="obj">
@@ -217,88 +197,6 @@ namespace Dhgms.DataManager.Model.Info
         {
             this.Dispose(true);
             GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        /// Gets a collection of string data for use for something like a CSV file
-        /// </summary>
-        /// <returns>
-        /// a collection of strings representing the data record
-        /// </returns>
-        public abstract IList<string> ToStringArray();
-
-        /// <summary>
-        /// Wrapper for adding a child XML element
-        /// </summary>
-        /// <param name="writer">
-        /// The XML writer to add the element to
-        /// </param>
-        /// <param name="name">
-        /// The name of the element.
-        /// </param>
-        /// <param name="value">
-        /// The value of the element.
-        /// </param>
-        protected void DoChildXmlElement(
-            System.Xml.XmlWriter writer,
-            string name,
-            string value)
-        {
-            if (writer == null)
-            {
-                throw new ArgumentNullException("writer");
-            }
-
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentNullException("name");
-            }
-
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentNullException("value");
-            }
-
-            writer.WriteStartElement(name);
-            writer.WriteValue(value);
-            writer.WriteEndElement();
-        }
-
-        /// <summary>
-        /// Wrapper for adding a CData element
-        /// </summary>
-        /// <param name="writer">
-        /// The XML writer to add the element to
-        /// </param>
-        /// <param name="name">
-        /// The name of the element.
-        /// </param>
-        /// <param name="value">
-        /// The value of the element.
-        /// </param>
-        protected void DoChildXmlCDataElement(
-            System.Xml.XmlWriter writer,
-            string name,
-            string value)
-        {
-            if (writer == null)
-            {
-                throw new ArgumentNullException("writer");
-            }
-
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentNullException("name");
-            }
-
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentNullException("value");
-            }
-
-            writer.WriteStartElement(name);
-            writer.WriteCData(value);
-            writer.WriteEndElement();
         }
 
         /// <summary>

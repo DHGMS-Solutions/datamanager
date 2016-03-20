@@ -19,25 +19,8 @@ namespace Dhgms.DataManager.Tests.Model.Info.InfoBase
             Assert.Equal(0, result);
         }
 
-        public override IList<string> HeaderRecord
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
 
         public override int CompareTo(CompareCollectionMethod other)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void DoTableValidation()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void DoXmlElement(XmlWriter writer, string parentElementName)
         {
             throw new NotImplementedException();
         }
@@ -48,11 +31,6 @@ namespace Dhgms.DataManager.Tests.Model.Info.InfoBase
         }
 
         public override int GetHashCode()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override IList<string> ToStringArray()
         {
             throw new NotImplementedException();
         }
