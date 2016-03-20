@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A1306E6-6537-4F77-B1E2-C3A1D9C22B8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dhgms.DataManager</RootNamespace>
+    <AssemblyName>Dhgms.DataManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Dhgms.DataManager.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Dhgms.DataManager.XML</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>dhgms.datamanager.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\CommandLineBase.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Model\ApplicationSetting.cs" />
+    <Compile Include="Model\ConfigurationElementCollection\BaseConfigurationElementCollection.cs" />
+    <Compile Include="Model\ConfigurationElementCollection\EmailRecipientCollection.cs" />
+    <Compile Include="Model\ConfigurationElementCollection\IRunSetCollection.cs" />
+    <Compile Include="Model\ConfigurationElementCollection\RunSetCollection.cs" />
+    <Compile Include="Model\ConfigurationElement\EmailRecipient.cs" />
+    <Compile Include="Model\ConfigurationElement\InternetServer.cs" />
+    <Compile Include="Model\ConfigurationElement\RunSet.cs" />
+    <Compile Include="Model\ConfigurationLoader\BaseConfigurationLoader.cs" />
+    <Compile Include="Model\ConfigurationLoader\CodeConfigurationLoader.cs" />
+    <Compile Include="Model\ConfigurationLoader\GroupPolicyConfigurationLoader.cs" />
+    <Compile Include="Model\ConfigurationLoader\XmlAppConfigConfigurationLoader.cs" />
+    <Compile Include="Model\ConfigurationSection\BaseConfigurationSection.cs" />
+    <Compile Include="Model\Difference\CommandLineSettings\CommandLineSettingsBaseDifference.cs">
+      <DependentUpon>CommandLineSettingsBaseDifference.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Model\Exception\Database\EmptyResultSetException.cs" />
+    <Compile Include="Model\Exception\Directory\StringInBadFormatException.cs" />
+    <Compile Include="Model\Exception\Email\NoRecipientsException.cs" />
+    <Compile Include="Model\Exception\EnumerationValueNotSupportedException..cs" />
+    <Compile Include="Model\Exception\FailedToGetResourceStreamException.cs" />
+    <None Include="App.config" />
+    <None Include="Dhgms.DataManager.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dhgms.datamanager.snk" />
+    <None Include="Model\Difference\CommandLineSettings\CommandLineSettingsBaseDifference.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CommandLineSettingsBaseDifference.cs</LastGenOutput>
+    </None>
+    <None Include="Model\Exception\NumberTooHighException.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumberTooHighException.cs</LastGenOutput>
+    </None>
+    <Compile Include="Model\Exception\InvalidTableCountException.cs" />
+    <Compile Include="Model\Exception\NoApplicationSettingSourcesException.cs" />
+    <Compile Include="Model\Exception\NullRunSetNameException.cs" />
+    <Compile Include="Model\Exception\NumberTooHighException.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NumberTooHighException.tt</DependentUpon>
+    </Compile>
+    <None Include="Model\Exception\NumberTooLowException.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumberTooLowException.cs</LastGenOutput>
+    </None>
+    <Compile Include="Model\Exception\NumberTooLowException.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NumberTooLowException.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Exception\PossibleSqlInjectionException.cs" />
+    <Compile Include="Model\Exception\PostCodeBadFormatException.cs" />
+    <Compile Include="Model\Exception\RunSetNotFoundException.cs" />
+    <Compile Include="Model\Exception\StringTooLongException.cs" />
+    <Compile Include="Model\Exception\StringTooShortException.cs" />
+    <Compile Include="Model\Exception\UnexpectedFileFormat.cs" />
+    <Compile Include="Model\GroupPolicySettings.cs" />
+    <Compile Include="Model\Helper\AdoNet\AdoNetBase.cs" />
+    <Compile Include="Model\Helper\ApplicationHelper.cs" />
+    <Compile Include="Model\Helper\BooleanExtensions.cs" />
+    <Compile Include="Model\Helper\ByteExtensions.cs" />
+    <Compile Include="Model\Helper\ConfigurationHelper.cs" />
+    <Compile Include="Model\Helper\Database\DatabaseHelperBase.cs" />
+    <Compile Include="Model\Helper\FileHelper.cs" />
+    <Compile Include="Model\Helper\NumberExtensions.cs" />
+    <Compile Include="Model\Helper\PermutationHelper.cs" />
+    <Compile Include="Model\Helper\CryptographyHelper.cs" />
+    <Compile Include="Model\Helper\Database\MsSql10.cs" />
+    <Compile Include="Model\Helper\DateExtensions.cs" />
+    <Compile Include="Model\Helper\EmailExtensions.cs" />
+    <Compile Include="Model\Helper\ReflectionExtensions.cs" />
+    <Compile Include="Model\Helper\TextExtensions.cs" />
+    <Compile Include="Model\IApplicationConfiguration.cs" />
+    <Compile Include="Model\Info\InfoBase.cs" />
+    <Compile Include="Model\Info\CommandLineSettings\CommandLineSettingsBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandLineSettingsBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Info\CommandLineSettings\IRunSet.cs" />
+    <Compile Include="Model\Info\DifferenceBase.cs" />
+    <Compile Include="Model\Info\IApplicationSettingsLoaderConfiguration.cs" />
+    <Compile Include="Model\Info\ViewFilterBase.cs" />
+    <Compile Include="Model\OnceTrueLatch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\CommandLine\" />
+    <Folder Include="Model\Info\CommandLineSettings\Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Model\Info\CommandLineSettings\CommandLineSettingsBase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CommandLineSettingsBase.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

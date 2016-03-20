@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D946255-B20A-417F-A410-D434011B0D82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dhgms.DataManager.Tests</RootNamespace>
+    <AssemblyName>Dhgms.DataManager.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Kent.Boogaart.HelperTrinity">
+      <HintPath>..\packages\Kent.Boogaart.HelperTrinity.1.4.0.0\lib\net40\Kent.Boogaart.HelperTrinity.dll</HintPath>
+    </Reference>
+    <Reference Include="Kent.Boogaart.KBCsv">
+      <HintPath>..\packages\Kent.Boogaart.KBCsv.1.4.0.0\lib\net40\Kent.Boogaart.KBCsv.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xunit">
+      <HintPath>..\Dhgms.DataManager\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.extensions">
+      <HintPath>..\Dhgms.DataManager\packages\xunit.extensions.1.9.2\lib\net20\xunit.extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ConfigurationLoader\BaseConfigurationLoaderTest.cs" />
+    <Compile Include="Model\ConfigurationLoader\CodeConfigurationLoaderTest.cs" />
+    <Compile Include="Model\ConfigurationLoader\XmlAppConfigConfigurationLoaderTest.cs" />
+    <Compile Include="Model\Helper\CsvTest.cs" />
+    <Compile Include="Model\Helper\DnsTest.cs" />
+    <Compile Include="Model\Info\InfoBase\CompareCollectionMethod.cs" />
+    <Compile Include="Model\Provider\Base.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dhgms.DataManager.Csv\Dhgms.DataManager.Csv.csproj">
+      <Project>{734b0c36-e598-41c6-822a-88250aad4d7e}</Project>
+      <Name>Dhgms.DataManager.Csv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dhgms.DataManager.Dns\Dhgms.DataManager.Dns.csproj">
+      <Project>{f0a9c290-a00a-4e80-aae9-28bc1ccdbc07}</Project>
+      <Name>Dhgms.DataManager.Dns</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dhgms.DataManager.EntityFramework\Dhgms.DataManager.EntityFramework.csproj">
+      <Project>{e16cae9e-8641-4085-91b7-f02fa9ac7cc5}</Project>
+      <Name>Dhgms.DataManager.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dhgms.DataManager.MSSqlClr10\Dhgms.DataManager.MSSqlClr10.csproj">
+      <Project>{ae48fd7d-d51f-473d-95d9-70e551476e1a}</Project>
+      <Name>Dhgms.DataManager.MSSqlClr10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dhgms.DataManager.Provider\Dhgms.DataManager.Provider.csproj">
+      <Project>{51842206-747a-4880-af2a-2af180af58b3}</Project>
+      <Name>Dhgms.DataManager.Provider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dhgms.DataManager\Dhgms.DataManager.csproj">
+      <Project>{2a1306e6-6537-4f77-b1e2-c3a1d9c22b8a}</Project>
+      <Name>Dhgms.DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dhgms.DataManager.Mocking\Dhgms.DataManager.Mocking.csproj">
+      <Project>{92b4f626-451a-4f7d-b415-b69ba8af49f6}</Project>
+      <Name>Dhgms.DataManager.Mocking</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
