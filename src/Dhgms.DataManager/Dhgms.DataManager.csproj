@@ -116,10 +116,11 @@
     <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>dhgms.datamanager.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
@@ -165,7 +166,6 @@
     <None Include="Dhgms.DataManager.nuspec">
       <SubType>Designer</SubType>
     </None>
-    <None Include="dhgms.datamanager.snk" />
     <None Include="Model\Difference\CommandLineSettings\CommandLineSettingsBaseDifference.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CommandLineSettingsBaseDifference.cs</LastGenOutput>
