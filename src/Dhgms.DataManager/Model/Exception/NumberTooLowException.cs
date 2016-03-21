@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="DHGMS Solutions" file="NumberTooLowException.cs">
-//   Copyright 2004-2014 DHGMS Solutions.
+//   Copyright 2004-2016 DHGMS Solutions.
 //      
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -76,18 +76,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowClrCharException" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowClrCharException(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public char Actual { get; private set; }
@@ -96,18 +84,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public char MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
     /// <summary>
@@ -161,18 +137,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowClrDateTimeException" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowClrDateTimeException(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public System.DateTime Actual { get; private set; }
@@ -181,18 +145,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public System.DateTime MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
     /// <summary>
@@ -246,18 +198,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowClrDecimalException" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowClrDecimalException(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public decimal Actual { get; private set; }
@@ -266,18 +206,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public decimal MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
     /// <summary>
@@ -331,18 +259,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowClrDoubleException" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowClrDoubleException(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public double Actual { get; private set; }
@@ -351,18 +267,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public double MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
     /// <summary>
@@ -416,18 +320,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowClrSingleException" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowClrSingleException(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public float Actual { get; private set; }
@@ -436,18 +328,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public float MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
     /// <summary>
@@ -501,18 +381,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowInteger16Exception" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowInteger16Exception(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public short Actual { get; private set; }
@@ -521,18 +389,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public short MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
     /// <summary>
@@ -586,18 +442,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowInteger32Exception" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowInteger32Exception(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public int Actual { get; private set; }
@@ -606,18 +450,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public int MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
     /// <summary>
@@ -671,18 +503,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowInteger64Exception" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowInteger64Exception(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public long Actual { get; private set; }
@@ -691,18 +511,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public long MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
     /// <summary>
@@ -756,18 +564,6 @@ namespace Dhgms.DataManager.Model.Exception
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLowUnsignedInteger8Exception" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLowUnsignedInteger8Exception(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public byte Actual { get; private set; }
@@ -776,18 +572,6 @@ namespace Dhgms.DataManager.Model.Exception
         /// Gets the minimum valid value.
         /// </summary>
         public byte MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
 }

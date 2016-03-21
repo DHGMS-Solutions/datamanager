@@ -74,11 +74,7 @@
     <None Include="dhgms.datamanager.entityframework.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Helper\EntityFramework\" />
-    <Folder Include="Model\Info\Raw\GBPostcode\" />
-    <Folder Include="Model\Info\SearchFilter\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Dhgms.DataManager\Dhgms.DataManager.csproj">
       <Project>{2a1306e6-6537-4f77-b1e2-c3a1d9c22b8a}</Project>

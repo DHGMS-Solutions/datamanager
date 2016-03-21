@@ -102,18 +102,6 @@ foreach(System.Collections.Generic.KeyValuePair<string, string> item in classes)
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumberTooLow<#=item.Key#>Exception" /> class.
-        /// </summary>
-        /// <param name="info">The serialization information.</param>
-        /// <param name="context">The streaming context.</param>
-        protected NumberTooLow<#=item.Key#>Exception(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
         /// Gets the actual value that cause the exception.
         /// </summary>
         public <#=item.Value#> Actual { get; private set; }
@@ -122,18 +110,6 @@ foreach(System.Collections.Generic.KeyValuePair<string, string> item in classes)
         /// Gets the minimum valid value.
         /// </summary>
         public <#=item.Value#> MinimumValid { get; private set; }
-
-        /// <summary>
-        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object with the invalid argument value and additional exception information.
-        /// </summary>
-        /// <param name="info">The object that holds the serialized object data. </param><param name="context">An object that describes the source or destination of the serialized data. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> object is null. </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/></PermissionSet>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("Actual", this.Actual);
-            info.AddValue("MinimumValid", this.MinimumValid);
-        }
     }
 
 <#
