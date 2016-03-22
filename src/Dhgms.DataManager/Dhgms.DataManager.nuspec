@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0"?>
 <package>
 	<metadata>
-		<id>$id$</id>
+		<id>DHGMS.DataManager</id>
 		<version>$version$</version>
 		<title>DHGMS Data Manager</title>
 		<authors>dhgmssolutions,dpvreony</authors>
 		<owners>dhgmssolutions,dpvreony</owners>
-		<projectUrl>http://datamanager.codeplex.com</projectUrl>
-		<licenseUrl>http://datamanager.codeplex.com/license</licenseUrl>
-		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/DHGMS-Solutions/datamanager/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/DHGMS-Solutions/datamanager</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>
 			A base library for performing Data orientated tasks. Designed to be used in conjunction with code generated using the DHGMS Nucleotide library.
 		</description>
-		<copyright>Copyright 2004-2014 DHGMS Solutions</copyright>
+		<copyright>Copyright 2004-2016 DHGMS Solutions</copyright>
 		<tags>T4 DHGMS Data</tags>
 		<frameworkAssemblies>
 			<frameworkAssembly assemblyName="System" />
@@ -24,5 +24,9 @@
 			<frameworkAssembly assemblyName="System.Xml" />
 			<frameworkAssembly assemblyName="System.Xml.Linq" />
 		</frameworkAssemblies>
-	</metadata>
+    <files>
+      <file src="bin\release\dhgms.datamanager.dll" target="lib\net4" />
+      <file src="..\..\license" />
+    </files>
+  </metadata>
 </package>
