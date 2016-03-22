@@ -24,9 +24,9 @@
 			<frameworkAssembly assemblyName="System.Xml" />
 			<frameworkAssembly assemblyName="System.Xml.Linq" />
 		</frameworkAssemblies>
-    <files>
-      <file src="bin\release\dhgms.datamanager.dll" target="lib\net4" />
-      <file src="..\..\license" />
-    </files>
   </metadata>
+  <files>
+    <file src="bin\release\dhgms.datamanager.dll" target="lib\net4" />
+    <file src="..\..\license" />
+  </files>
 </package>
