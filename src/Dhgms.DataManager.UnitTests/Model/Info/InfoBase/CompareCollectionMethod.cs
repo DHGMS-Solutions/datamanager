@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,7 +36,7 @@ namespace Dhgms.DataManager.Tests.Model.Info.InfoBase
         /// </returns>
         public override int CompareTo(CompareCollectionMethod other)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace Dhgms.DataManager.Tests.Model.Info.InfoBase
         /// </returns>
         public override bool Equals(CompareCollectionMethod other)
         {
-            throw new NotImplementedException();
+            return this == other;
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Dhgms.DataManager.Tests.Model.Info.InfoBase
         /// </returns>
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            return RuntimeHelpers.GetHashCode(this);
         }
 
         /// <summary>
@@ -71,7 +72,6 @@ namespace Dhgms.DataManager.Tests.Model.Info.InfoBase
         /// <exception cref="NotImplementedException">Method not implemented</exception>
         protected override void OnDisposing()
         {
-            throw new NotImplementedException();
         }
     }
 }
