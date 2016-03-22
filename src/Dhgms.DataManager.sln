@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0DFFDC04
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dhgms.DataManager.Mocking", "Dhgms.DataManager.Mocking\Dhgms.DataManager.Mocking.csproj", "{92B4F626-451A-4F7D-B415-B69BA8AF49F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dhgms.DataManager.Tests", "Dhgms.DataManager.Tests\Dhgms.DataManager.Tests.csproj", "{0D946255-B20A-417F-A410-D434011B0D82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dhgms.DataManager.UnitTests", "Dhgms.DataManager.UnitTests\Dhgms.DataManager.UnitTests.csproj", "{0D946255-B20A-417F-A410-D434011B0D82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
