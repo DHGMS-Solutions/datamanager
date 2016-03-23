@@ -10,6 +10,11 @@ assembly_info:
   assembly_version: '{version}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
+init:
+- ps: >-
+    if ($env:APPVEYOR_REPO_BRANCH -eq 'master') {
+      $env:localversionsuffix = "-dev"
+    }
 before_build:
 # taken from: https://raw.githubusercontent.com/tkelman/numpy/440e81ace36d65a7b62eec1a0460467f3dc97085/appveyor.yml
 # If there's a newer build queued for the same PR, cancel this one
