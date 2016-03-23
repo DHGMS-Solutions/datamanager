@@ -30,7 +30,7 @@ test_script:
 - pip install codecov
 - codecov -f "DhgmsDataManager_coverage.xml"
 artifacts:
-- path: src\Dhgms.DataManager\bin\Release\Dhgms.DataManager.*.nupkg
+- path: Dhgms.DataManager.*.nupkg
   name: nugetpackage
 deploy:
 - provider: NuGet
