@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0"?>
 <package >
 	<metadata>
-		<id>$id$</id>
+		<id>DHGMS.DataManager.EntityFramework</id>
 		<version>$version$</version>
 		<title>DHGMS Data Manager Entity Framework</title>
     <authors>dhgmssolutions,dpvreony</authors>
     <owners>dhgmssolutions,dpvreony</owners>
-    <projectUrl>http://datamanager.codeplex.com</projectUrl>
-    <licenseUrl>http://datamanager.codeplex.com/license</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/DHGMS-Solutions/datamanager/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/DHGMS-Solutions/datamanager</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
 			Entity Framework base library for performing Data orientated tasks. Designed to be used in conjunction with code generated using the DHGMS Nucleotide library.
