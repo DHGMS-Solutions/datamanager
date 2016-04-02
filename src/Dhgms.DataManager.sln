@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dhgms.DataManager.Mocking",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dhgms.DataManager.UnitTests", "Dhgms.DataManager.UnitTests\Dhgms.DataManager.UnitTests.csproj", "{0D946255-B20A-417F-A410-D434011B0D82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dhgms.DataManager.EntityFramework", "Dhgms.DataManager.EntityFramework\Dhgms.DataManager.EntityFramework.csproj", "{E16CAE9E-8641-4085-91B7-F02FA9AC7CC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{0D946255-B20A-417F-A410-D434011B0D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D946255-B20A-417F-A410-D434011B0D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D946255-B20A-417F-A410-D434011B0D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E16CAE9E-8641-4085-91B7-F02FA9AC7CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E16CAE9E-8641-4085-91B7-F02FA9AC7CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E16CAE9E-8641-4085-91B7-F02FA9AC7CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E16CAE9E-8641-4085-91B7-F02FA9AC7CC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

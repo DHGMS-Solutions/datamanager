@@ -229,7 +229,6 @@
     <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\CommandLine\" />
     <Folder Include="Model\Info\CommandLineSettings\Interface\" />
   </ItemGroup>
   <ItemGroup>
