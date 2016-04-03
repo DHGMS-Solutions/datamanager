@@ -26,4 +26,8 @@
       <frameworkAssembly assemblyName="System.Xml.Linq" />
     </frameworkAssemblies>
   </metadata>
+  <files>
+    <file src="bin\release\dhgms.datamanager.entityframework.dll" target="lib\net46" />
+    <file src="..\..\license" />
+  </files>
 </package>
