@@ -39,17 +39,5 @@ namespace Dhgms.DataManager.Model.Info
         public abstract int Count { get; }
 
         #endregion
-
-        #region Public Methods and Operators
-
-        /// <summary>
-        /// Gets a list of column names where the values are different
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
-        public abstract IList<string> GetColumnNames();
-
-        #endregion
     }
 }

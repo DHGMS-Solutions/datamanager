@@ -171,23 +171,6 @@ namespace Dhgms.DataManager.Model.Difference.CommandLineSettings
         }
 
         /// <summary>
-        /// Gets the names of the columns that are different
-        /// </summary>
-        /// <returns>
-        /// list of names of the columns that are different
-        /// </returns>
-        public override System.Collections.Generic.IList<string> GetColumnNames()
-        {
-            var columns = new System.Collections.Generic.List<string>();
-            if (this.WantsHelp)
-            {
-                columns.Add("WantsHelp");
-            }
-
-            return columns;
-        }
-
-        /// <summary>
         /// Gets the CDSL that defines the OData Vocabularies for this class
         /// </summary>
         public static XmlReader GetOdataVocabularies()
