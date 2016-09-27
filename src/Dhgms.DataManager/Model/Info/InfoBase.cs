@@ -268,7 +268,6 @@ namespace Dhgms.DataManager.Model.Info
             var otherEnum = other.GetEnumerator();
             return (from firstItem in first let otherItem = otherEnum.MoveNext() select firstItem.CompareTo(otherItem)).FirstOrDefault(callResult => callResult != 0);
         }
-
         #endregion
     }
 }

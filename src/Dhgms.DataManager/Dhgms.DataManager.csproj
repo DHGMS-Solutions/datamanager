@@ -202,6 +202,7 @@
     <Compile Include="Model\Helper\ApplicationHelper.cs" />
     <Compile Include="Model\Helper\BooleanExtensions.cs" />
     <Compile Include="Model\Helper\ByteExtensions.cs" />
+    <Compile Include="Model\Helper\ComparableHelper.cs" />
     <Compile Include="Model\Helper\ConfigurationHelper.cs" />
     <Compile Include="Model\Helper\Database\DatabaseHelperBase.cs" />
     <Compile Include="Model\Helper\FileHelper.cs" />
